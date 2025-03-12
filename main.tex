@@ -1,0 +1,37 @@
+\documentclass[10pt]{datasheet}
+
+% TOC DEPTH
+\setcounter{tocdepth}{3}
+
+\usepackage[
+backend=biber,
+sorting=ynt
+]{biblatex}
+
+% BIBLIOGRAPHY FILE
+\addbibresource{sample.bib}
+
+% DATA
+\title{Documentation UPSIZER}
+\author{Thomas Païs, Robin Augereau}
+\date{Janvier 2025}
+\revision{Revision 1}
+
+\begin{document}
+\maketitle
+
+% SUMMARY
+\newpage
+\tableofcontents
+\newpage
+
+\cite{latexcompanion}
+
+\input{sections/preface}
+\input{sections/specifications}
+\input{sections/axi}
+\input{sections/architecture}
+\input{sections/improvements}
+\input{sections/bibliography}
+
+\end{document}

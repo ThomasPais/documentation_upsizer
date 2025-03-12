@@ -1,0 +1,30 @@
+/* AXI Write Handshake Single Transaction */
+{ signal : [
+  // Clock
+  { name: 'clk', wave: 'P.............'},
+  
+  // Write Request Channel
+  ['AW Channel',
+    { name: 'awaddr',  wave: 'x5.x.|........', data: ['Address']},
+    { name: 'awvalid', wave: '01.0.|........'},
+    { name: 'awready', wave: '0.10.|........', data: ['A1', 'A2']},
+  ],
+   
+  // Write Channel
+  ['W Channel',
+    { name: 'wdata',  wave: 'x....|...7x...', data : ['Data']},
+    { name: 'wvalid', wave: '0....|...10...'},
+    { name: 'wready', wave: '0....|.1..0...'},
+    { name: 'wlast',  wave: '0....|...10...'},
+  ],
+  
+  // B Channel
+  ['B Channel',
+    { name: 'bresp',  wave: 'x....|....3x..', data : ['Okay']},
+    { name: 'bvalid', wave: '0....|....10..'},
+    { name: 'bready', wave: '0....|...1.0..'},
+  ],
+],
+   config: { hscale: 2, fit2pane: 1    
+   },
+}
